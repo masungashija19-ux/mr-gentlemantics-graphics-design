@@ -10,7 +10,9 @@
 
 <style>
 
-/* ================= GENERAL ================= */
+/* ==================================================
+   GENERAL
+================================================== */
 
 * {
     margin: 0;
@@ -26,9 +28,12 @@ body {
 }
 
 
-/* ================= ANIMATED HEADER ================= */
+/* ==================================================
+   HEADER
+================================================== */
 
 header {
+
     background:
         linear-gradient(
             135deg,
@@ -41,14 +46,20 @@ header {
     background-size: 300% 300%;
 
     color: white;
+
     text-align: center;
+
     padding: 85px 20px;
 
-    animation: backgroundMove 6s ease infinite;
+    animation:
+        backgroundMove 6s ease infinite;
 }
 
+
 header h1 {
+
     font-size: 46px;
+
     margin-bottom: 20px;
 
     animation:
@@ -56,7 +67,9 @@ header h1 {
         floatText 3s ease-in-out infinite;
 }
 
+
 header p {
+
     font-size: 20px;
 
     animation:
@@ -64,7 +77,9 @@ header p {
 }
 
 
-/* ================= ANIMATIONS ================= */
+/* ==================================================
+   ANIMATIONS
+================================================== */
 
 @keyframes backgroundMove {
 
@@ -85,6 +100,7 @@ header p {
 @keyframes glowText {
 
     from {
+
         text-shadow:
             0 0 5px white,
             0 0 10px #c084fc,
@@ -92,6 +108,7 @@ header p {
     }
 
     to {
+
         text-shadow:
             0 0 10px white,
             0 0 25px #e879f9,
@@ -104,11 +121,13 @@ header p {
 @keyframes glowSmall {
 
     from {
+
         text-shadow:
             0 0 5px white;
     }
 
     to {
+
         text-shadow:
             0 0 10px white,
             0 0 20px #f0abfc;
@@ -132,21 +151,31 @@ header p {
 }
 
 
-/* ================= CONTAINER ================= */
+/* ==================================================
+   CONTAINER
+================================================== */
 
 .container {
+
     max-width: 1100px;
+
     margin: auto;
+
     padding: 65px 20px;
 }
 
 
-/* ================= TITLES ================= */
+/* ==================================================
+   TITLES
+================================================== */
 
 .title {
+
     text-align: center;
+
     margin-bottom: 40px;
 }
+
 
 .title h2 {
 
@@ -176,9 +205,13 @@ header p {
         glowTitle 1.5s ease-in-out infinite alternate;
 }
 
+
 .title p {
+
     margin-top: 15px;
+
     color: #555;
+
     font-size: 17px;
 }
 
@@ -223,7 +256,9 @@ header p {
 }
 
 
-/* ================= SERVICES ================= */
+/* ==================================================
+   SERVICES
+================================================== */
 
 .services {
 
@@ -290,7 +325,9 @@ header p {
 }
 
 
-/* ================= PORTFOLIO ================= */
+/* ==================================================
+   PORTFOLIO
+================================================== */
 
 .portfolio {
 
@@ -353,11 +390,14 @@ header p {
 
 
 .work:hover img {
+
     transform: scale(1.05);
 }
 
 
-/* ================= COMMENTS ================= */
+/* ==================================================
+   COMMENTS
+================================================== */
 
 .comments {
 
@@ -382,32 +422,12 @@ header p {
         0 0 10px #c084fc,
         0 0 25px
         rgba(147,51,234,0.4);
-
-    animation:
-        commentGlow 2s ease-in-out infinite alternate;
 }
 
 
-@keyframes commentGlow {
-
-    from {
-
-        box-shadow:
-            0 0 8px #c084fc,
-            0 0 15px
-            rgba(147,51,234,0.3);
-    }
-
-    to {
-
-        box-shadow:
-            0 0 15px #9333ea,
-            0 0 35px #e879f9;
-    }
-}
-
-
-/* ================= RATING ================= */
+/* ==================================================
+   RATING
+================================================== */
 
 .rating {
 
@@ -481,7 +501,9 @@ header p {
 }
 
 
-/* ================= INPUTS ================= */
+/* ==================================================
+   INPUTS
+================================================== */
 
 .comments input,
 .comments textarea {
@@ -524,7 +546,9 @@ header p {
 }
 
 
-/* ================= COMMENT BUTTON ================= */
+/* ==================================================
+   COMMENT BUTTON
+================================================== */
 
 .comment-button {
 
@@ -562,6 +586,7 @@ header p {
 
 
 .comment-button:hover {
+
     transform: scale(1.03);
 }
 
@@ -599,9 +624,12 @@ header p {
 }
 
 
-/* ================= COMMENT RESULTS ================= */
+/* ==================================================
+   COMMENTS RESULT
+================================================== */
 
 #commentList {
+
     margin-top: 25px;
 }
 
@@ -666,7 +694,9 @@ header p {
 }
 
 
-/* ================= CONTACT ================= */
+/* ==================================================
+   CONTACT
+================================================== */
 
 .contact {
 
@@ -705,6 +735,7 @@ header p {
 
 
 .contact p {
+
     font-size: 18px;
 }
 
@@ -744,7 +775,9 @@ header p {
 }
 
 
-/* ================= FOOTER ================= */
+/* ==================================================
+   FOOTER
+================================================== */
 
 footer {
 
@@ -758,18 +791,11 @@ footer {
 }
 
 
-footer p {
-
-    animation:
-        glowSmall 2s ease-in-out infinite alternate;
-}
-
-
 /* ==================================================
-   MAUA YA TAA PEMBENI
+   WANYAMA NA NDEGE PEMBENI
 ================================================== */
 
-.side-flowers {
+.side-life {
 
     position: fixed;
 
@@ -777,7 +803,7 @@ footer p {
 
     height: 100vh;
 
-    width: 65px;
+    width: 75px;
 
     display: flex;
 
@@ -795,194 +821,183 @@ footer p {
 
 /* KUSHOTO */
 
-.left-flowers {
-    left: 4px;
+.left-life {
+
+    left: 2px;
 }
 
 
 /* KULIA */
 
-.right-flowers {
-    right: 4px;
+.right-life {
+
+    right: 2px;
 }
 
 
-/* MAUA */
+/* WANYAMA */
 
-.side-flowers span {
+.side-life span {
 
     font-size: 32px;
 
     display: block;
 
     animation:
-        flowerLight 2.5s ease-in-out infinite alternate,
-        flowerMove 3s ease-in-out infinite;
+        animalGlow 2.5s ease-in-out infinite alternate,
+        animalMove 3s ease-in-out infinite;
 }
 
 
-/* DELAY YA KILA UA */
+/* ANIMATIONS TOFAUTI */
 
-.side-flowers span:nth-child(1) {
+.side-life span:nth-child(1) {
     animation-delay: 0s;
 }
 
-.side-flowers span:nth-child(2) {
-    animation-delay: .4s;
+.side-life span:nth-child(2) {
+    animation-delay: .5s;
 }
 
-.side-flowers span:nth-child(3) {
-    animation-delay: .8s;
+.side-life span:nth-child(3) {
+    animation-delay: 1s;
 }
 
-.side-flowers span:nth-child(4) {
-    animation-delay: 1.2s;
+.side-life span:nth-child(4) {
+    animation-delay: 1.5s;
 }
 
-.side-flowers span:nth-child(5) {
-    animation-delay: 1.6s;
-}
-
-.side-flowers span:nth-child(6) {
+.side-life span:nth-child(5) {
     animation-delay: 2s;
 }
 
+.side-life span:nth-child(6) {
+    animation-delay: 2.5s;
+}
 
-/* ================= MWANGA WA MAUA ================= */
 
-@keyframes flowerLight {
+/* MWANGA WA WANYAMA */
+
+@keyframes animalGlow {
 
     0% {
 
         filter:
-            hue-rotate(0deg)
             drop-shadow(
-                0 0 4px #ff00ff
+                0 0 3px #9333ea
             );
 
-        transform: scale(1);
-    }
-
-    25% {
-
-        filter:
-            hue-rotate(70deg)
-            drop-shadow(
-                0 0 15px #9333ea
-            );
-
-        transform: scale(1.12);
+        opacity: .7;
     }
 
     50% {
 
         filter:
-            hue-rotate(150deg)
+            drop-shadow(
+                0 0 15px #ec4899
+            );
+
+        opacity: 1;
+    }
+
+    100% {
+
+        filter:
             drop-shadow(
                 0 0 20px #06b6d4
             );
 
-        transform: scale(1.2);
-    }
-
-    75% {
-
-        filter:
-            hue-rotate(230deg)
-            drop-shadow(
-                0 0 20px #facc15
-            );
-
-        transform: scale(1.12);
-    }
-
-    100% {
-
-        filter:
-            hue-rotate(360deg)
-            drop-shadow(
-                0 0 25px #ec4899
-            );
-
-        transform: scale(1);
+        opacity: .85;
     }
 }
 
 
-/* ================= HARAKATI ================= */
+/* KUSOGEA KIDOGO */
 
-@keyframes flowerMove {
+@keyframes animalMove {
 
     0% {
 
         transform:
             translateX(0)
-            rotate(-5deg);
+            rotate(-3deg);
     }
 
     50% {
 
         transform:
-            translateX(5px)
-            rotate(5deg);
+            translateX(6px)
+            rotate(3deg);
     }
 
     100% {
 
         transform:
             translateX(0)
-            rotate(-5deg);
+            rotate(-3deg);
     }
 }
 
 
-/* ================= MOBILE ================= */
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media (max-width: 600px) {
 
     header {
+
         padding: 60px 15px;
     }
 
+
     header h1 {
+
         font-size: 30px;
     }
 
+
     header p {
+
         font-size: 16px;
     }
 
+
     .title h2 {
+
         font-size: 25px;
     }
 
+
     .comments {
+
         padding: 25px 18px;
     }
 
+
     .work img {
+
         height: 240px;
     }
 
+
     .stars span {
+
         font-size: 35px;
     }
 
-    .side-flowers {
-        width: 36px;
+
+    .side-life {
+
+        width: 35px;
     }
 
-    .side-flowers span {
-        font-size: 20px;
+
+    .side-life span {
+
+        font-size: 19px;
     }
 
-    .left-flowers {
-        left: 0;
-    }
-
-    .right-flowers {
-        right: 0;
-    }
 }
 
 </style>
@@ -1119,8 +1134,8 @@ footer p {
         <div class="work">
 
             <img
-                src="design1.jpg"
-                alt="Graphic Design 1"
+                src="90916486222805073.jpg"
+                alt="Graphic Design"
             >
 
         </div>
@@ -1129,8 +1144,8 @@ footer p {
         <div class="work">
 
             <img
-                src="design2.jpg"
-                alt="Graphic Design 2"
+                src="Business Logo, Luxury Logo, Gold Logo, 3D Logo, Premium Logo, Modern Logo, Brand Identity, Corporate.jpg"
+                alt="Business Logo"
             >
 
         </div>
@@ -1139,8 +1154,8 @@ footer p {
         <div class="work">
 
             <img
-                src="design3.jpg"
-                alt="Graphic Design 3"
+                src="Create the perfect design by customizing easy to….jpg"
+                alt="Creative Design"
             >
 
         </div>
@@ -1149,8 +1164,8 @@ footer p {
         <div class="work">
 
             <img
-                src="design4.jpg"
-                alt="Graphic Design 4"
+                src="Flyer design 🎨 Need a flyer or logo for your….jpg"
+                alt="Flyer Design"
             >
 
         </div>
@@ -1159,8 +1174,8 @@ footer p {
         <div class="work">
 
             <img
-                src="design5.jpg"
-                alt="Graphic Design 5"
+                src="Tracing the path to perfection, one line at a….jpg"
+                alt="Creative Graphic Design"
             >
 
         </div>
@@ -1182,11 +1197,10 @@ footer p {
 
 
 <!-- ==================================================
-     COMMENTS
+     COMMENTS & RATING
 ================================================== -->
 
 <section class="container">
-
 
     <div class="title">
 
@@ -1207,7 +1221,7 @@ footer p {
         <div class="rating">
 
             <p>
-                ⭐ Chagua kiwango cha huduma:
+                ⭐ Kadiria huduma yetu
             </p>
 
 
@@ -1274,6 +1288,7 @@ footer p {
         🔥 Unahitaji Design?
     </h2>
 
+
     <p>
         Wasiliana nasi leo kwa ajili ya huduma yako.
     </p>
@@ -1306,29 +1321,43 @@ footer p {
 
 
 <!-- ==================================================
-     MAUA YA TAA PEMBENI
+     WANYAMA NA NDEGE KUSHOTO
 ================================================== -->
 
-<div class="side-flowers left-flowers">
+<div class="side-life left-life">
 
-    <span>🌸</span>
-    <span>🌺</span>
-    <span>🌷</span>
-    <span>🌸</span>
-    <span>🌺</span>
-    <span>🌷</span>
+    <span>🦁</span>
+
+    <span>🦋</span>
+
+    <span>🦜</span>
+
+    <span>🐘</span>
+
+    <span>🦚</span>
+
+    <span>🐆</span>
 
 </div>
 
 
-<div class="side-flowers right-flowers">
+<!-- ==================================================
+     WANYAMA NA NDEGE KULIA
+================================================== -->
 
-    <span>🌷</span>
-    <span>🌺</span>
-    <span>🌸</span>
-    <span>🌷</span>
-    <span>🌺</span>
-    <span>🌸</span>
+<div class="side-life right-life">
+
+    <span>🦅</span>
+
+    <span>🦋</span>
+
+    <span>🦜</span>
+
+    <span>🦒</span>
+
+    <span>🦚</span>
+
+    <span>🐅</span>
 
 </div>
 
@@ -1387,7 +1416,7 @@ function setRating(rating) {
 }
 
 
-/* ================= ADD COMMENT ================= */
+/* ================= COMMENT ================= */
 
 function addComment() {
 
