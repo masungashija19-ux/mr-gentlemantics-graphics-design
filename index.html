@@ -1,21 +1,16 @@
-
+```html
 <!DOCTYPE html>
 <html lang="sw">
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mr Gentlematic Graphics Design</title>
 
-
 <style>
 
-/* ==================================================
-   GENERAL
-================================================== */
+/* ================= GENERAL ================= */
 
 * {
     margin: 0;
@@ -25,21 +20,15 @@
 }
 
 body {
-
     background: #f4f0ff;
-
     color: #222;
-
     overflow-x: hidden;
 }
 
 
-/* ==================================================
-   ANIMATED HEADER
-================================================== */
+/* ================= ANIMATED HEADER ================= */
 
 header {
-
     background:
         linear-gradient(
             135deg,
@@ -52,20 +41,14 @@ header {
     background-size: 300% 300%;
 
     color: white;
-
     text-align: center;
-
     padding: 85px 20px;
 
-    animation:
-        backgroundMove 6s ease infinite;
+    animation: backgroundMove 6s ease infinite;
 }
 
-
 header h1 {
-
     font-size: 46px;
-
     margin-bottom: 20px;
 
     animation:
@@ -73,9 +56,7 @@ header h1 {
         floatText 3s ease-in-out infinite;
 }
 
-
 header p {
-
     font-size: 20px;
 
     animation:
@@ -83,9 +64,7 @@ header p {
 }
 
 
-/* ==================================================
-   ANIMATIONS
-================================================== */
+/* ================= ANIMATIONS ================= */
 
 @keyframes backgroundMove {
 
@@ -106,7 +85,6 @@ header p {
 @keyframes glowText {
 
     from {
-
         text-shadow:
             0 0 5px white,
             0 0 10px #c084fc,
@@ -114,7 +92,6 @@ header p {
     }
 
     to {
-
         text-shadow:
             0 0 10px white,
             0 0 25px #e879f9,
@@ -127,13 +104,11 @@ header p {
 @keyframes glowSmall {
 
     from {
-
         text-shadow:
             0 0 5px white;
     }
 
     to {
-
         text-shadow:
             0 0 10px white,
             0 0 20px #f0abfc;
@@ -157,31 +132,21 @@ header p {
 }
 
 
-/* ==================================================
-   CONTAINER
-================================================== */
+/* ================= CONTAINER ================= */
 
 .container {
-
     max-width: 1100px;
-
     margin: auto;
-
     padding: 65px 20px;
 }
 
 
-/* ==================================================
-   SECTION TITLES
-================================================== */
+/* ================= TITLES ================= */
 
 .title {
-
     text-align: center;
-
     margin-bottom: 40px;
 }
-
 
 .title h2 {
 
@@ -211,13 +176,9 @@ header p {
         glowTitle 1.5s ease-in-out infinite alternate;
 }
 
-
 .title p {
-
     margin-top: 15px;
-
     color: #555;
-
     font-size: 17px;
 }
 
@@ -262,9 +223,7 @@ header p {
 }
 
 
-/* ==================================================
-   SERVICES
-================================================== */
+/* ================= SERVICES ================= */
 
 .services {
 
@@ -331,9 +290,7 @@ header p {
 }
 
 
-/* ==================================================
-   PORTFOLIO
-================================================== */
+/* ================= PORTFOLIO ================= */
 
 .portfolio {
 
@@ -396,14 +353,11 @@ header p {
 
 
 .work:hover img {
-
     transform: scale(1.05);
 }
 
 
-/* ==================================================
-   COMMENTS BOX
-================================================== */
+/* ================= COMMENTS ================= */
 
 .comments {
 
@@ -453,9 +407,7 @@ header p {
 }
 
 
-/* ==================================================
-   RATING
-================================================== */
+/* ================= RATING ================= */
 
 .rating {
 
@@ -529,9 +481,7 @@ header p {
 }
 
 
-/* ==================================================
-   INPUTS
-================================================== */
+/* ================= INPUTS ================= */
 
 .comments input,
 .comments textarea {
@@ -574,9 +524,7 @@ header p {
 }
 
 
-/* ==================================================
-   COMMENT BUTTON
-================================================== */
+/* ================= COMMENT BUTTON ================= */
 
 .comment-button {
 
@@ -614,7 +562,6 @@ header p {
 
 
 .comment-button:hover {
-
     transform: scale(1.03);
 }
 
@@ -652,12 +599,9 @@ header p {
 }
 
 
-/* ==================================================
-   COMMENT RESULTS
-================================================== */
+/* ================= COMMENT RESULTS ================= */
 
 #commentList {
-
     margin-top: 25px;
 }
 
@@ -722,9 +666,7 @@ header p {
 }
 
 
-/* ==================================================
-   CONTACT
-================================================== */
+/* ================= CONTACT ================= */
 
 .contact {
 
@@ -763,7 +705,6 @@ header p {
 
 
 .contact p {
-
     font-size: 18px;
 }
 
@@ -803,9 +744,7 @@ header p {
 }
 
 
-/* ==================================================
-   FOOTER
-================================================== */
+/* ================= FOOTER ================= */
 
 footer {
 
@@ -827,142 +766,101 @@ footer p {
 
 
 /* ==================================================
-   FLOWERS
+   MAUA YA TAA PEMBENI
 ================================================== */
 
-.flowers {
+.side-flowers {
 
     position: fixed;
 
-    inset: 0;
+    top: 0;
+
+    height: 100vh;
+
+    width: 65px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    align-items: center;
 
     pointer-events: none;
 
-    overflow: hidden;
-
-    z-index: 999;
+    z-index: 9999;
 }
 
 
-.flowers span {
+/* KUSHOTO */
 
-    position: absolute;
+.left-flowers {
+    left: 4px;
+}
 
-    bottom: -60px;
 
-    font-size: 30px;
+/* KULIA */
+
+.right-flowers {
+    right: 4px;
+}
+
+
+/* MAUA */
+
+.side-flowers span {
+
+    font-size: 32px;
+
+    display: block;
 
     animation:
-        flowerFloat 10s linear infinite,
-        flowerColor 4s ease-in-out infinite alternate;
-
-    filter:
-        drop-shadow(
-            0 0 8px currentColor
-        );
+        flowerLight 2.5s ease-in-out infinite alternate,
+        flowerMove 3s ease-in-out infinite;
 }
 
 
-/* FLOWER POSITIONS */
+/* DELAY YA KILA UA */
 
-.flowers span:nth-child(1) {
-    left: 5%;
+.side-flowers span:nth-child(1) {
     animation-delay: 0s;
 }
 
-.flowers span:nth-child(2) {
-    left: 15%;
+.side-flowers span:nth-child(2) {
+    animation-delay: .4s;
+}
+
+.side-flowers span:nth-child(3) {
+    animation-delay: .8s;
+}
+
+.side-flowers span:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+.side-flowers span:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+.side-flowers span:nth-child(6) {
     animation-delay: 2s;
 }
 
-.flowers span:nth-child(3) {
-    left: 25%;
-    animation-delay: 4s;
-}
 
-.flowers span:nth-child(4) {
-    left: 35%;
-    animation-delay: 1s;
-}
+/* ================= MWANGA WA MAUA ================= */
 
-.flowers span:nth-child(5) {
-    left: 45%;
-    animation-delay: 3s;
-}
-
-.flowers span:nth-child(6) {
-    left: 55%;
-    animation-delay: 5s;
-}
-
-.flowers span:nth-child(7) {
-    left: 65%;
-    animation-delay: 2s;
-}
-
-.flowers span:nth-child(8) {
-    left: 75%;
-    animation-delay: 4s;
-}
-
-.flowers span:nth-child(9) {
-    left: 85%;
-    animation-delay: 1s;
-}
-
-.flowers span:nth-child(10) {
-    left: 95%;
-    animation-delay: 3s;
-}
-
-
-/* FLOWER MOVEMENT */
-
-@keyframes flowerFloat {
-
-    0% {
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity: 0;
-    }
-
-    10% {
-
-        opacity: 1;
-    }
-
-    50% {
-
-        transform:
-            translateY(-50vh)
-            rotate(180deg);
-    }
-
-    100% {
-
-        transform:
-            translateY(-110vh)
-            rotate(360deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* FLOWER COLORS */
-
-@keyframes flowerColor {
+@keyframes flowerLight {
 
     0% {
 
         filter:
             hue-rotate(0deg)
             drop-shadow(
-                0 0 8px #9333ea
+                0 0 4px #ff00ff
             );
+
+        transform: scale(1);
     }
 
     25% {
@@ -970,8 +868,10 @@ footer p {
         filter:
             hue-rotate(70deg)
             drop-shadow(
-                0 0 12px #ec4899
+                0 0 15px #9333ea
             );
+
+        transform: scale(1.12);
     }
 
     50% {
@@ -979,8 +879,10 @@ footer p {
         filter:
             hue-rotate(150deg)
             drop-shadow(
-                0 0 12px #06b6d4
+                0 0 20px #06b6d4
             );
+
+        transform: scale(1.2);
     }
 
     75% {
@@ -988,8 +890,10 @@ footer p {
         filter:
             hue-rotate(230deg)
             drop-shadow(
-                0 0 12px #facc15
+                0 0 20px #facc15
             );
+
+        transform: scale(1.12);
     }
 
     100% {
@@ -997,65 +901,88 @@ footer p {
         filter:
             hue-rotate(360deg)
             drop-shadow(
-                0 0 12px #a855f7
+                0 0 25px #ec4899
             );
+
+        transform: scale(1);
     }
 }
 
 
-/* ==================================================
-   MOBILE
-================================================== */
+/* ================= HARAKATI ================= */
+
+@keyframes flowerMove {
+
+    0% {
+
+        transform:
+            translateX(0)
+            rotate(-5deg);
+    }
+
+    50% {
+
+        transform:
+            translateX(5px)
+            rotate(5deg);
+    }
+
+    100% {
+
+        transform:
+            translateX(0)
+            rotate(-5deg);
+    }
+}
+
+
+/* ================= MOBILE ================= */
 
 @media (max-width: 600px) {
 
     header {
-
         padding: 60px 15px;
     }
 
-
     header h1 {
-
         font-size: 30px;
     }
 
-
     header p {
-
         font-size: 16px;
     }
 
-
     .title h2 {
-
         font-size: 25px;
     }
 
-
     .comments {
-
         padding: 25px 18px;
     }
 
-
     .work img {
-
         height: 240px;
     }
 
-
     .stars span {
-
         font-size: 35px;
     }
 
-
-    .flowers span {
-
-        font-size: 22px;
+    .side-flowers {
+        width: 36px;
     }
 
+    .side-flowers span {
+        font-size: 20px;
+    }
+
+    .left-flowers {
+        left: 0;
+    }
+
+    .right-flowers {
+        right: 0;
+    }
 }
 
 </style>
@@ -1242,7 +1169,7 @@ footer p {
         <div class="work">
 
             <img
-                src="design6.jpg"
+                src="argent.jpg"
                 alt="Argent Design"
             >
 
@@ -1277,8 +1204,6 @@ footer p {
     <div class="comments">
 
 
-        <!-- RATING -->
-
         <div class="rating">
 
             <p>
@@ -1288,25 +1213,15 @@ footer p {
 
             <div class="stars">
 
-                <span onclick="setRating(1)">
-                    ★
-                </span>
+                <span onclick="setRating(1)">★</span>
 
-                <span onclick="setRating(2)">
-                    ★
-                </span>
+                <span onclick="setRating(2)">★</span>
 
-                <span onclick="setRating(3)">
-                    ★
-                </span>
+                <span onclick="setRating(3)">★</span>
 
-                <span onclick="setRating(4)">
-                    ★
-                </span>
+                <span onclick="setRating(4)">★</span>
 
-                <span onclick="setRating(5)">
-                    ★
-                </span>
+                <span onclick="setRating(5)">★</span>
 
             </div>
 
@@ -1318,8 +1233,6 @@ footer p {
         </div>
 
 
-        <!-- NAME -->
-
         <input
             type="text"
             id="name"
@@ -1327,15 +1240,11 @@ footer p {
         >
 
 
-        <!-- MESSAGE -->
-
         <textarea
             id="message"
             placeholder="💭 Andika maoni yako hapa..."
         ></textarea>
 
-
-        <!-- BUTTON -->
 
         <button
             class="comment-button"
@@ -1346,8 +1255,6 @@ footer p {
 
         </button>
 
-
-        <!-- COMMENTS -->
 
         <div id="commentList"></div>
 
@@ -1366,7 +1273,6 @@ footer p {
     <h2>
         🔥 Unahitaji Design?
     </h2>
-
 
     <p>
         Wasiliana nasi leo kwa ajili ya huduma yako.
@@ -1392,39 +1298,36 @@ footer p {
 <footer>
 
     <p>
-
         © 2026 Mr Gentlematic Graphics Design.
         All Rights Reserved.
-
     </p>
 
 </footer>
 
 
 <!-- ==================================================
-     FLOWERS
+     MAUA YA TAA PEMBENI
 ================================================== -->
 
-<div class="flowers">
+<div class="side-flowers left-flowers">
 
     <span>🌸</span>
-
     <span>🌺</span>
-
     <span>🌷</span>
-
     <span>🌸</span>
-
     <span>🌺</span>
-
     <span>🌷</span>
 
+</div>
+
+
+<div class="side-flowers right-flowers">
+
+    <span>🌷</span>
+    <span>🌺</span>
     <span>🌸</span>
-
-    <span>🌺</span>
-
     <span>🌷</span>
-
+    <span>🌺</span>
     <span>🌸</span>
 
 </div>
@@ -1437,14 +1340,10 @@ footer p {
 <script>
 
 
-/* CURRENT RATING */
-
 let selectedRating = 0;
 
 
-/* ==================================================
-   SELECT RATING
-================================================== */
+/* ================= RATING ================= */
 
 function setRating(rating) {
 
@@ -1488,9 +1387,7 @@ function setRating(rating) {
 }
 
 
-/* ==================================================
-   ADD COMMENT
-================================================== */
+/* ================= ADD COMMENT ================= */
 
 function addComment() {
 
@@ -1509,8 +1406,6 @@ function addComment() {
         .trim();
 
 
-    /* CHECK RATING */
-
     if (selectedRating === 0) {
 
         alert(
@@ -1520,8 +1415,6 @@ function addComment() {
         return;
     }
 
-
-    /* CHECK NAME AND MESSAGE */
 
     if (
         name === "" ||
@@ -1552,8 +1445,6 @@ function addComment() {
         "comment";
 
 
-    /* CREATE STARS */
-
     let stars = "";
 
 
@@ -1567,8 +1458,6 @@ function addComment() {
 
     }
 
-
-    /* CREATE COMMENT */
 
     comment.innerHTML =
 
@@ -1591,8 +1480,6 @@ function addComment() {
     );
 
 
-    /* CLEAR INPUTS */
-
     document.getElementById(
         "name"
     ).value = "";
@@ -1602,8 +1489,6 @@ function addComment() {
         "message"
     ).value = "";
 
-
-    /* RESET RATING */
 
     selectedRating = 0;
 
