@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,9 +9,7 @@
 
 <style>
 
-/* ==================================================
-   GENERAL
-================================================== */
+/* ===================== GENERAL ===================== */
 
 * {
     margin: 0;
@@ -22,66 +19,90 @@
 }
 
 body {
-    background: #f4f0ff;
-    color: #222;
+    background: #080014;
+    color: white;
     overflow-x: hidden;
 }
 
 
-/* ==================================================
-   HEADER
-================================================== */
+/* ===================== MOVING BACKGROUND ===================== */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 20%, #7c3aed55, transparent 25%),
+        radial-gradient(circle at 80% 30%, #ec489955, transparent 25%),
+        radial-gradient(circle at 50% 80%, #06b6d455, transparent 25%);
+
+    animation: bgGlow 6s ease-in-out infinite alternate;
+
+    z-index: -2;
+}
+
+
+@keyframes bgGlow {
+
+    0% {
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.15);
+        filter: hue-rotate(90deg);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: hue-rotate(180deg);
+    }
+}
+
+
+/* ===================== HEADER ===================== */
 
 header {
+
+    min-height: 420px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
 
     background:
         linear-gradient(
             135deg,
-            #2e1065,
-            #5b21b6,
-            #9333ea,
-            #ec4899
+            #16002e,
+            #4c1d95,
+            #7e22ce,
+            #be185d
         );
 
     background-size: 300% 300%;
 
-    color: white;
+    animation: headerMove 5s ease infinite;
 
-    text-align: center;
+    border-bottom:
+        3px solid #e879f9;
 
-    padding: 85px 20px;
-
-    animation:
-        backgroundMove 6s ease infinite;
+    box-shadow:
+        0 0 20px #a855f7,
+        0 0 50px #ec4899;
 }
 
 
-header h1 {
-
-    font-size: 46px;
-
-    margin-bottom: 20px;
-
-    animation:
-        glowText 1.5s ease-in-out infinite alternate,
-        floatText 3s ease-in-out infinite;
-}
-
-
-header p {
-
-    font-size: 20px;
-
-    animation:
-        glowSmall 2s ease-in-out infinite alternate;
-}
-
-
-/* ==================================================
-   ANIMATIONS
-================================================== */
-
-@keyframes backgroundMove {
+@keyframes headerMove {
 
     0% {
         background-position: 0% 50%;
@@ -97,52 +118,64 @@ header p {
 }
 
 
-@keyframes glowText {
+header h1 {
 
-    from {
+    font-size: 48px;
+
+    margin-bottom: 20px;
+
+    animation:
+        textFlash 1.2s infinite alternate,
+        floating 3s ease-in-out infinite;
+}
+
+
+header p {
+
+    font-size: 21px;
+
+    animation:
+        textFlash 2s infinite alternate;
+}
+
+
+/* ===================== TEXT GLOW ===================== */
+
+@keyframes textFlash {
+
+    0% {
 
         text-shadow:
             0 0 5px white,
-            0 0 10px #c084fc,
-            0 0 20px #9333ea;
+            0 0 10px #9333ea;
     }
 
-    to {
+    50% {
 
         text-shadow:
             0 0 10px white,
-            0 0 25px #e879f9,
-            0 0 45px #c084fc,
-            0 0 60px #9333ea;
+            0 0 20px #ec4899,
+            0 0 35px #a855f7;
+    }
+
+    100% {
+
+        text-shadow:
+            0 0 15px white,
+            0 0 30px #06b6d4,
+            0 0 50px #ec4899;
     }
 }
 
 
-@keyframes glowSmall {
-
-    from {
-
-        text-shadow:
-            0 0 5px white;
-    }
-
-    to {
-
-        text-shadow:
-            0 0 10px white,
-            0 0 20px #f0abfc;
-    }
-}
-
-
-@keyframes floatText {
+@keyframes floating {
 
     0% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-6px);
+        transform: translateY(-8px);
     }
 
     100% {
@@ -151,9 +184,7 @@ header p {
 }
 
 
-/* ==================================================
-   CONTAINER
-================================================== */
+/* ===================== CONTAINER ===================== */
 
 .container {
 
@@ -161,13 +192,11 @@ header p {
 
     margin: auto;
 
-    padding: 65px 20px;
+    padding: 70px 20px;
 }
 
 
-/* ==================================================
-   TITLES
-================================================== */
+/* ===================== TITLES ===================== */
 
 .title {
 
@@ -179,30 +208,29 @@ header p {
 
 .title h2 {
 
-    font-size: 34px;
-
-    color: white;
-
     display: inline-block;
 
-    padding: 13px 28px;
+    padding: 15px 30px;
 
-    border-radius: 16px;
+    border-radius: 20px;
 
     background:
         linear-gradient(
             90deg,
-            #5b21b6,
+            #6d28d9,
             #9333ea,
             #ec4899,
-            #5b21b6
+            #06b6d4,
+            #6d28d9
         );
 
     background-size: 300% 300%;
 
     animation:
-        shineText 3s ease-in-out infinite,
-        glowTitle 1.5s ease-in-out infinite alternate;
+        gradientMove 3s infinite,
+        titleGlow 1.5s infinite alternate;
+
+    font-size: 32px;
 }
 
 
@@ -210,13 +238,13 @@ header p {
 
     margin-top: 15px;
 
-    color: #555;
+    color: #ddd;
 
     font-size: 17px;
 }
 
 
-@keyframes shineText {
+@keyframes gradientMove {
 
     0% {
         background-position: 0% 50%;
@@ -232,33 +260,25 @@ header p {
 }
 
 
-@keyframes glowTitle {
+@keyframes titleGlow {
 
     from {
 
         box-shadow:
-            0 0 5px #9333ea;
-
-        text-shadow:
-            0 0 5px white;
+            0 0 8px #9333ea;
     }
 
     to {
 
         box-shadow:
             0 0 15px #9333ea,
-            0 0 30px #e879f9;
-
-        text-shadow:
-            0 0 10px white,
-            0 0 20px #f0abfc;
+            0 0 30px #ec4899,
+            0 0 50px #06b6d4;
     }
 }
 
 
-/* ==================================================
-   SERVICES
-================================================== */
+/* ===================== SERVICES ===================== */
 
 .services {
 
@@ -273,7 +293,14 @@ header p {
 
 .card {
 
-    background: white;
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #17002d,
+            #26104d
+        );
 
     padding: 35px 20px;
 
@@ -281,12 +308,15 @@ header p {
 
     text-align: center;
 
+    border: 2px solid #9333ea;
+
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.1);
+        0 0 8px #9333ea;
 
-    transition: 0.4s;
+    transition: .4s;
 
-    border: 2px solid transparent;
+    animation:
+        cardGlow 2s infinite alternate;
 }
 
 
@@ -296,38 +326,52 @@ header p {
         translateY(-12px)
         scale(1.03);
 
-    border-color: #9333ea;
-
     box-shadow:
-        0 10px 30px
-        rgba(147,51,234,0.35);
+        0 0 15px #9333ea,
+        0 0 35px #ec4899,
+        0 0 55px #06b6d4;
 }
 
 
 .card h3 {
 
-    color: #6d28d9;
+    color: #f0abfc;
 
     margin-bottom: 12px;
 
     font-size: 21px;
 
     animation:
-        glowSmall 2s ease-in-out infinite alternate;
+        textFlash 2s infinite alternate;
 }
 
 
 .card p {
 
-    color: #555;
+    color: #ddd;
 
     line-height: 1.6;
 }
 
 
-/* ==================================================
-   PORTFOLIO
-================================================== */
+@keyframes cardGlow {
+
+    0% {
+
+        box-shadow:
+            0 0 6px #9333ea;
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 14px #9333ea,
+            0 0 25px #ec4899;
+    }
+}
+
+
+/* ===================== PORTFOLIO ===================== */
 
 .portfolio {
 
@@ -342,20 +386,24 @@ header p {
 
 .work {
 
-    background: white;
+    background: #16002b;
 
     padding: 10px;
 
     border-radius: 20px;
 
+    border:
+        2px solid #9333ea;
+
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.12);
+        0 0 10px #9333ea;
 
     overflow: hidden;
 
-    transition: 0.4s;
+    transition: .4s;
 
-    border: 2px solid transparent;
+    animation:
+        workGlow 2s infinite alternate;
 }
 
 
@@ -363,13 +411,11 @@ header p {
 
     transform:
         translateY(-10px)
-        scale(1.02);
-
-    border-color: #9333ea;
+        scale(1.03);
 
     box-shadow:
-        0 10px 30px
-        rgba(147,51,234,0.35);
+        0 0 20px #9333ea,
+        0 0 40px #ec4899;
 }
 
 
@@ -381,32 +427,40 @@ header p {
 
     object-fit: cover;
 
-    display: block;
-
     border-radius: 14px;
 
-    transition: 0.5s;
+    display: block;
+
+    transition: .5s;
 }
 
 
 .work:hover img {
 
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 
-/* ==================================================
-   COMMENTS
-================================================== */
+@keyframes workGlow {
+
+    from {
+
+        box-shadow:
+            0 0 7px #9333ea;
+    }
+
+    to {
+
+        box-shadow:
+            0 0 15px #ec4899,
+            0 0 30px #9333ea;
+    }
+}
+
+
+/* ===================== RATING & COMMENTS ===================== */
 
 .comments {
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #f3e8ff
-        );
 
     max-width: 700px;
 
@@ -416,18 +470,38 @@ header p {
 
     border-radius: 25px;
 
-    border: 2px solid #9333ea;
+    background:
+        linear-gradient(
+            145deg,
+            #17002d,
+            #2a0b52
+        );
 
-    box-shadow:
-        0 0 10px #c084fc,
-        0 0 25px
-        rgba(147,51,234,0.4);
+    border:
+        2px solid #9333ea;
+
+    animation:
+        commentGlow 1.5s infinite alternate;
 }
 
 
-/* ==================================================
-   RATING
-================================================== */
+@keyframes commentGlow {
+
+    from {
+
+        box-shadow:
+            0 0 8px #9333ea;
+    }
+
+    to {
+
+        box-shadow:
+            0 0 18px #9333ea,
+            0 0 35px #ec4899,
+            0 0 50px #06b6d4;
+    }
+}
+
 
 .rating {
 
@@ -439,11 +513,11 @@ header p {
 
 .rating p {
 
+    color: #f0abfc;
+
+    margin-bottom: 12px;
+
     font-weight: bold;
-
-    color: #5b21b6;
-
-    margin-bottom: 10px;
 }
 
 
@@ -459,25 +533,25 @@ header p {
 
 .stars span {
 
-    font-size: 42px;
+    font-size: 44px;
 
-    color: #ccc;
+    color: #555;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 
 .stars span:hover {
 
-    color: #facc15;
-
     transform: scale(1.2);
+
+    color: #facc15;
 
     text-shadow:
         0 0 10px #facc15,
-        0 0 20px #facc15;
+        0 0 25px #facc15;
 }
 
 
@@ -487,54 +561,60 @@ header p {
 
     text-shadow:
         0 0 8px #facc15,
-        0 0 20px #facc15;
+        0 0 20px #facc15,
+        0 0 35px #facc15;
 }
 
 
 #ratingText {
 
-    margin-top: 8px;
-
-    font-size: 15px;
-
-    color: #9333ea;
+    margin-top: 10px;
 }
 
 
-/* ==================================================
-   INPUTS
-================================================== */
+/* ===================== INPUTS ===================== */
 
 .comments input,
 .comments textarea {
 
     width: 100%;
 
-    padding: 15px;
+    padding: 16px;
 
     margin-bottom: 15px;
 
-    border:
-        2px solid #ddd;
-
     border-radius: 12px;
+
+    border:
+        2px solid #9333ea;
+
+    background: #0d001a;
+
+    color: white;
 
     font-size: 16px;
 
     outline: none;
 
-    transition: 0.3s;
+    transition: .3s;
+}
+
+
+.comments input::placeholder,
+.comments textarea::placeholder {
+
+    color: #aaa;
 }
 
 
 .comments input:focus,
 .comments textarea:focus {
 
-    border-color: #9333ea;
+    border-color: #ec4899;
 
     box-shadow:
-        0 0 10px
-        rgba(147,51,234,0.4);
+        0 0 10px #9333ea,
+        0 0 20px #ec4899;
 }
 
 
@@ -546,30 +626,17 @@ header p {
 }
 
 
-/* ==================================================
-   COMMENT BUTTON
-================================================== */
+/* ===================== BUTTON ===================== */
 
 .comment-button {
 
     width: 100%;
 
+    padding: 17px;
+
     border: none;
 
-    padding: 16px;
-
     border-radius: 30px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #5b21b6,
-            #9333ea,
-            #ec4899,
-            #5b21b6
-        );
-
-    background-size: 300% 300%;
 
     color: white;
 
@@ -579,9 +646,39 @@ header p {
 
     cursor: pointer;
 
+    background:
+        linear-gradient(
+            90deg,
+            #6d28d9,
+            #9333ea,
+            #ec4899,
+            #06b6d4,
+            #6d28d9
+        );
+
+    background-size: 300% 300%;
+
     animation:
-        buttonMove 3s ease infinite,
-        buttonGlow 1.5s ease-in-out infinite alternate;
+        gradientMove 3s infinite,
+        buttonGlow 1.5s infinite alternate;
+}
+
+
+@keyframes buttonGlow {
+
+    from {
+
+        box-shadow:
+            0 0 8px #9333ea;
+    }
+
+    to {
+
+        box-shadow:
+            0 0 15px #9333ea,
+            0 0 30px #ec4899,
+            0 0 45px #06b6d4;
+    }
 }
 
 
@@ -591,42 +688,7 @@ header p {
 }
 
 
-@keyframes buttonMove {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-@keyframes buttonGlow {
-
-    from {
-
-        box-shadow:
-            0 0 5px #9333ea;
-    }
-
-    to {
-
-        box-shadow:
-            0 0 15px #9333ea,
-            0 0 30px #e879f9;
-    }
-}
-
-
-/* ==================================================
-   COMMENTS RESULT
-================================================== */
+/* ===================== COMMENT LIST ===================== */
 
 #commentList {
 
@@ -636,41 +698,40 @@ header p {
 
 .comment {
 
-    background: #f4f0ff;
-
     padding: 18px;
-
-    border-radius: 15px;
 
     margin-top: 12px;
 
+    border-radius: 15px;
+
+    background: #17002d;
+
     border-left:
-        5px solid #9333ea;
+        5px solid #ec4899;
 
     box-shadow:
-        0 3px 10px
-        rgba(0,0,0,0.08);
+        0 0 10px #9333ea;
 
     animation:
-        commentAppear 0.5s ease;
+        commentAppear .5s ease;
 }
 
 
 .comment strong {
 
-    color: #5b21b6;
+    color: #f0abfc;
 
     font-size: 18px;
 }
 
 
-.comment .stars-result {
+.stars-result {
 
     color: #facc15;
 
     font-size: 20px;
 
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 
@@ -694,49 +755,54 @@ header p {
 }
 
 
-/* ==================================================
-   CONTACT
-================================================== */
+/* ===================== CONTACT ===================== */
 
 .contact {
 
     text-align: center;
 
+    padding: 70px 20px;
+
     background:
         linear-gradient(
             135deg,
-            #5b21b6,
-            #9333ea,
-            #ec4899
+            #3b0764,
+            #7e22ce,
+            #be185d
         );
 
     background-size: 300% 300%;
 
-    color: white;
-
-    padding: 60px 20px;
-
-    margin-top: 30px;
-
     animation:
-        backgroundMove 6s ease infinite;
+        headerMove 5s infinite;
+
+    border-top:
+        3px solid #e879f9;
+
+    border-bottom:
+        3px solid #e879f9;
+
+    box-shadow:
+        0 0 20px #9333ea;
 }
 
 
 .contact h2 {
 
+    font-size: 36px;
+
     margin-bottom: 15px;
 
-    font-size: 34px;
-
     animation:
-        glowText 1.5s ease-in-out infinite alternate;
+        textFlash 1s infinite alternate;
 }
 
 
 .contact p {
 
     font-size: 18px;
+
+    margin-bottom: 25px;
 }
 
 
@@ -744,24 +810,26 @@ header p {
 
     display: inline-block;
 
-    margin-top: 25px;
-
-    background: white;
-
-    color: #5b21b6;
-
-    padding: 15px 30px;
+    padding: 16px 32px;
 
     border-radius: 30px;
+
+    background: #25d366;
+
+    color: white;
 
     text-decoration: none;
 
     font-weight: bold;
 
-    transition: 0.3s;
-
     box-shadow:
-        0 0 10px white;
+        0 0 10px #25d366,
+        0 0 25px #25d366;
+
+    animation:
+        whatsappGlow 1.5s infinite alternate;
+
+    transition: .3s;
 }
 
 
@@ -770,14 +838,30 @@ header p {
     transform: scale(1.08);
 
     box-shadow:
-        0 0 15px white,
-        0 0 30px #f0abfc;
+        0 0 15px #25d366,
+        0 0 35px #25d366,
+        0 0 50px #25d366;
 }
 
 
-/* ==================================================
-   FOOTER
-================================================== */
+@keyframes whatsappGlow {
+
+    from {
+
+        box-shadow:
+            0 0 8px #25d366;
+    }
+
+    to {
+
+        box-shadow:
+            0 0 15px #25d366,
+            0 0 30px #25d366;
+    }
+}
+
+
+/* ===================== FOOTER ===================== */
 
 footer {
 
@@ -785,217 +869,48 @@ footer {
 
     padding: 25px;
 
-    background: #25104d;
+    background: #050008;
 
-    color: white;
+    border-top:
+        2px solid #9333ea;
+
+    box-shadow:
+        0 0 15px #9333ea;
 }
 
 
-/* ==================================================
-   WANYAMA NA NDEGE PEMBENI
-================================================== */
-
-.side-life {
-
-    position: fixed;
-
-    top: 0;
-
-    height: 100vh;
-
-    width: 75px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-around;
-
-    align-items: center;
-
-    pointer-events: none;
-
-    z-index: 9999;
-}
-
-
-/* KUSHOTO */
-
-.left-life {
-
-    left: 2px;
-}
-
-
-/* KULIA */
-
-.right-life {
-
-    right: 2px;
-}
-
-
-/* WANYAMA */
-
-.side-life span {
-
-    font-size: 32px;
-
-    display: block;
-
-    animation:
-        animalGlow 2.5s ease-in-out infinite alternate,
-        animalMove 3s ease-in-out infinite;
-}
-
-
-/* ANIMATIONS TOFAUTI */
-
-.side-life span:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.side-life span:nth-child(2) {
-    animation-delay: .5s;
-}
-
-.side-life span:nth-child(3) {
-    animation-delay: 1s;
-}
-
-.side-life span:nth-child(4) {
-    animation-delay: 1.5s;
-}
-
-.side-life span:nth-child(5) {
-    animation-delay: 2s;
-}
-
-.side-life span:nth-child(6) {
-    animation-delay: 2.5s;
-}
-
-
-/* MWANGA WA WANYAMA */
-
-@keyframes animalGlow {
-
-    0% {
-
-        filter:
-            drop-shadow(
-                0 0 3px #9333ea
-            );
-
-        opacity: .7;
-    }
-
-    50% {
-
-        filter:
-            drop-shadow(
-                0 0 15px #ec4899
-            );
-
-        opacity: 1;
-    }
-
-    100% {
-
-        filter:
-            drop-shadow(
-                0 0 20px #06b6d4
-            );
-
-        opacity: .85;
-    }
-}
-
-
-/* KUSOGEA KIDOGO */
-
-@keyframes animalMove {
-
-    0% {
-
-        transform:
-            translateX(0)
-            rotate(-3deg);
-    }
-
-    50% {
-
-        transform:
-            translateX(6px)
-            rotate(3deg);
-    }
-
-    100% {
-
-        transform:
-            translateX(0)
-            rotate(-3deg);
-    }
-}
-
-
-/* ==================================================
-   MOBILE
-================================================== */
+/* ===================== MOBILE ===================== */
 
 @media (max-width: 600px) {
 
-    header {
-
-        padding: 60px 15px;
-    }
-
-
     header h1 {
 
-        font-size: 30px;
+        font-size: 31px;
     }
-
 
     header p {
 
         font-size: 16px;
     }
 
-
     .title h2 {
 
-        font-size: 25px;
+        font-size: 24px;
     }
-
 
     .comments {
 
-        padding: 25px 18px;
+        padding: 22px 17px;
     }
-
 
     .work img {
 
         height: 240px;
     }
 
-
     .stars span {
 
-        font-size: 35px;
-    }
-
-
-    .side-life {
-
-        width: 35px;
-    }
-
-
-    .side-life span {
-
-        font-size: 19px;
+        font-size: 36px;
     }
 
 }
@@ -1008,9 +923,7 @@ footer {
 <body>
 
 
-<!-- ==================================================
-     HEADER
-================================================== -->
+<!-- ===================== HEADER ===================== -->
 
 <header>
 
@@ -1026,9 +939,7 @@ footer {
 </header>
 
 
-<!-- ==================================================
-     SERVICES
-================================================== -->
+<!-- ===================== SERVICES ===================== -->
 
 <section class="container">
 
@@ -1109,20 +1020,18 @@ footer {
 </section>
 
 
-<!-- ==================================================
-     PORTFOLIO
-================================================== -->
+<!-- ===================== PORTFOLIO ===================== -->
 
 <section class="container">
 
     <div class="title">
 
         <h2>
-            🎨 Kazi Zetu
+            🎨 Kazi Zangu
         </h2>
 
         <p>
-            Baadhi ya designs tulizotengeneza.
+            Baadhi ya kazi nilizotengeneza.
         </p>
 
     </div>
@@ -1132,62 +1041,44 @@ footer {
 
 
         <div class="work">
-
             <img
-                src="90916486222805073.jpg"
-                alt="Graphic Design"
-            >
-
+                src="design1.jpg"
+                alt="Graphic Design">
         </div>
 
 
         <div class="work">
-
             <img
-                src="Business Logo, Luxury Logo, Gold Logo, 3D Logo, Premium Logo, Modern Logo, Brand Identity, Corporate.jpg"
-                alt="Business Logo"
-            >
-
+                src="design2.jpg"
+                alt="Business Logo">
         </div>
 
 
         <div class="work">
-
             <img
-                src="Create the perfect design by customizing easy to….jpg"
-                alt="Creative Design"
-            >
-
+                src="design3.jpg"
+                alt="Creative Design">
         </div>
 
 
         <div class="work">
-
             <img
-                src="Flyer design 🎨 Need a flyer or logo for your….jpg"
-                alt="Flyer Design"
-            >
-
+                src="design4.jpg"
+                alt="Flyer Design">
         </div>
 
 
         <div class="work">
-
             <img
-                src="Tracing the path to perfection, one line at a….jpg"
-                alt="Creative Graphic Design"
-            >
-
+                src="design5.jpg"
+                alt="Graphic Design">
         </div>
 
 
         <div class="work">
-
             <img
-                src="argent.jpg"
-                alt="Argent Design"
-            >
-
+                src="design6.jpg"
+                alt="Argent Design">
         </div>
 
 
@@ -1196,20 +1087,18 @@ footer {
 </section>
 
 
-<!-- ==================================================
-     COMMENTS & RATING
-================================================== -->
+<!-- ===================== RATING ===================== -->
 
 <section class="container">
 
     <div class="title">
 
         <h2>
-            💬 Tupe Maoni Yako
+            ⭐ Rating & Maoni
         </h2>
 
         <p>
-            Tungependa kusikia maoni yako kuhusu huduma zetu.
+            Tupe maoni kuhusu huduma zetu.
         </p>
 
     </div>
@@ -1248,22 +1137,19 @@ footer {
 
 
         <input
-            type="text"
             id="name"
-            placeholder="✍️ Andika jina lako"
-        >
+            type="text"
+            placeholder="✍️ Andika jina lako">
 
 
         <textarea
             id="message"
-            placeholder="💭 Andika maoni yako hapa..."
-        ></textarea>
+            placeholder="💬 Andika maoni yako hapa..."></textarea>
 
 
         <button
             class="comment-button"
-            onclick="addComment()"
-        >
+            onclick="addComment()">
 
             🚀 Tuma Maoni
 
@@ -1278,16 +1164,13 @@ footer {
 </section>
 
 
-<!-- ==================================================
-     CONTACT
-================================================== -->
+<!-- ===================== CONTACT ===================== -->
 
 <section class="contact">
 
     <h2>
         🔥 Unahitaji Design?
     </h2>
-
 
     <p>
         Wasiliana nasi leo kwa ajili ya huduma yako.
@@ -1296,8 +1179,7 @@ footer {
 
     <a
         class="button"
-        href="https://wa.me/255792286991"
-    >
+        href="https://wa.me/255792286991">
 
         💬 Wasiliana WhatsApp
 
@@ -1306,78 +1188,30 @@ footer {
 </section>
 
 
-<!-- ==================================================
-     FOOTER
-================================================== -->
+<!-- ===================== FOOTER ===================== -->
 
 <footer>
 
     <p>
-        © 2026 Mr Gentlematic Graphics Design.
-        All Rights Reserved.
+        © 2026 Mr Gentlematic Graphics Design
+        | All Rights Reserved
     </p>
 
 </footer>
 
 
-<!-- ==================================================
-     WANYAMA NA NDEGE KUSHOTO
-================================================== -->
-
-<div class="side-life left-life">
-
-    <span>🦁</span>
-
-    <span>🦋</span>
-
-    <span>🦜</span>
-
-    <span>🐘</span>
-
-    <span>🦚</span>
-
-    <span>🐆</span>
-
-</div>
-
-
-<!-- ==================================================
-     WANYAMA NA NDEGE KULIA
-================================================== -->
-
-<div class="side-life right-life">
-
-    <span>🦅</span>
-
-    <span>🦋</span>
-
-    <span>🦜</span>
-
-    <span>🦒</span>
-
-    <span>🦚</span>
-
-    <span>🐅</span>
-
-</div>
-
-
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
+<!-- ===================== JAVASCRIPT ===================== -->
 
 <script>
-
 
 let selectedRating = 0;
 
 
-/* ================= RATING ================= */
+/* RATING */
 
 function setRating(rating) {
 
     selectedRating = rating;
-
 
     let stars =
         document.querySelectorAll(
@@ -1416,10 +1250,9 @@ function setRating(rating) {
 }
 
 
-/* ================= COMMENT ================= */
+/* COMMENT */
 
 function addComment() {
-
 
     let name =
         document
@@ -1438,7 +1271,7 @@ function addComment() {
     if (selectedRating === 0) {
 
         alert(
-            "⭐ Tafadhali chagua nyota kwanza."
+            "⭐ Tafadhali chagua rating."
         );
 
         return;
@@ -1451,31 +1284,14 @@ function addComment() {
     ) {
 
         alert(
-            "⚠️ Tafadhali jaza jina na maoni yako."
+            "⚠️ Tafadhali jaza jina na maoni."
         );
 
         return;
     }
 
 
-    let commentList =
-        document.getElementById(
-            "commentList"
-        );
-
-
-    let comment =
-        document.createElement(
-            "div"
-        );
-
-
-    comment.className =
-        "comment";
-
-
     let stars = "";
-
 
     for (
         let i = 0;
@@ -1488,6 +1304,16 @@ function addComment() {
     }
 
 
+    let comment =
+        document.createElement(
+            "div"
+        );
+
+
+    comment.className =
+        "comment";
+
+
     comment.innerHTML =
 
         "<strong>👤 " +
@@ -1498,15 +1324,17 @@ function addComment() {
         stars +
         "</div>" +
 
-        "<br>" +
-
+        "<p style='margin-top:10px;color:#ddd;'>" +
         "💬 " +
-        message;
+        message +
+        "</p>";
 
 
-    commentList.appendChild(
-        comment
-    );
+    document
+        .getElementById(
+            "commentList"
+        )
+        .appendChild(comment);
 
 
     document.getElementById(
@@ -1525,12 +1353,10 @@ function addComment() {
     document.querySelectorAll(
         ".stars span"
     ).forEach(
-
         star =>
         star.classList.remove(
             "active"
         )
-
     );
 
 
@@ -1545,6 +1371,5 @@ function addComment() {
 
 
 </body>
-
 </html>
 ```
