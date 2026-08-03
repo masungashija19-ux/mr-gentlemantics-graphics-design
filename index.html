@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -36,7 +37,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: auto;
             padding: 50px 20px;
         }
@@ -64,11 +65,6 @@
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
         }
 
         .card h3 {
@@ -78,6 +74,34 @@
 
         .card p {
             color: #555;
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .work {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+
+        .work img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .work img:hover {
+            transform: scale(1.03);
         }
 
         .contact {
@@ -162,14 +186,58 @@
 
     </section>
 
+
+    <!-- KAZI ZETU -->
+    <section class="container">
+
+        <div class="title">
+            <h2>🎨 Kazi Zetu</h2>
+            <p>Baadhi ya designs tulizotengeneza.</p>
+        </div>
+
+        <div class="portfolio">
+
+            <div class="work">
+                <img src="design1.jpg" alt="Graphic Design 1">
+            </div>
+
+            <div class="work">
+                <img src="design2.jpg" alt="Graphic Design 2">
+            </div>
+
+            <div class="work">
+                <img src="design3.jpg" alt="Graphic Design 3">
+            </div>
+
+            <div class="work">
+                <img src="design4.jpg" alt="Graphic Design 4">
+            </div>
+
+            <div class="work">
+                <img src="design5.jpg" alt="Graphic Design 5">
+            </div>
+
+            <div class="work">
+                <img src="design6.jpg" alt="Argent Design">
+            </div>
+
+        </div>
+
+    </section>
+
+
     <section class="contact">
+
         <h2>Unahitaji Design?</h2>
+
         <p>Wasiliana nasi leo kwa ajili ya huduma yako.</p>
 
         <a class="button" href="https://wa.me/255792286991">
             💬 Wasiliana WhatsApp
         </a>
+
     </section>
+
 
     <footer>
         <p>© 2026 Mr Gentlematic Graphics Design. All Rights Reserved.</p>
@@ -177,3 +245,4 @@
 
 </body>
 </html>
+```
