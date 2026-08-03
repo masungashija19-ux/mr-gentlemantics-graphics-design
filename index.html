@@ -1,22 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="sw">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mr Gentlematic Graphics Design</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f0ff;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #5b21b6, #9333ea);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .title h2 {
+            font-size: 32px;
+            color: #5b21b6;
+            margin-bottom: 10px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h3 {
+            color: #6d28d9;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .contact {
+            text-align: center;
+            background: #5b21b6;
+            color: white;
+            padding: 45px 20px;
+            margin-top: 30px;
+        }
+
+        .contact h2 {
+            margin-bottom: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            background: white;
+            color: #5b21b6;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #25104d;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Mr Gentlematic Graphics Design</h1>
+    <header>
+        <h1>Mr Gentlematic Graphics Design</h1>
+        <p>Tunakupa ubunifu wa kisasa kwa biashara na mitandao ya kijamii.</p>
+    </header>
 
-    <p>Karibu kwenye huduma zetu za Graphics Design.</p>
+    <section class="container">
 
-    <h2>Huduma Tunazotoa</h2>
+        <div class="title">
+            <h2>Huduma Tunazotoa</h2>
+            <p>Chagua huduma unayohitaji kwa biashara yako.</p>
+        </div>
 
-    <ul>
-        <li>Logo Design</li>
-        <li>Poster Design</li>
-        <li>Business Card</li>
-        <li>Social Media Advertisements</li>
-    </ul>
+        <div class="services">
+
+            <div class="card">
+                <h3>🎨 Logo Design</h3>
+                <p>Logo nzuri na professional kwa biashara au brand yako.</p>
+            </div>
+
+            <div class="card">
+                <h3>📢 Poster Design</h3>
+                <p>Poster zinazovutia kwa matangazo ya biashara yako.</p>
+            </div>
+
+            <div class="card">
+                <h3>💳 Business Card</h3>
+                <p>Business card yenye muonekano wa kisasa na wa kuvutia.</p>
+            </div>
+
+            <div class="card">
+                <h3>📱 Social Media</h3>
+                <p>Design za matangazo kwa WhatsApp, Instagram, Facebook na TikTok.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="contact">
+        <h2>Unahitaji Design?</h2>
+        <p>Wasiliana nasi leo kwa ajili ya huduma yako.</p>
+
+        <a class="button" href="https://wa.me/255792286991">
+            💬 Wasiliana WhatsApp
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 Mr Gentlematic Graphics Design. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
