@@ -20,228 +20,983 @@
             color: #222;
         }
 
+        /* ================= HEADER ================= */
+
         header {
-            background: linear-gradient(135deg, #5b21b6, #9333ea);
+            background: linear-gradient(
+                135deg,
+                #2e1065,
+                #5b21b6,
+                #9333ea,
+                #ec4899
+            );
+
+            background-size: 300% 300%;
+
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
+
+            animation: backgroundMove 6s ease infinite;
         }
 
         header h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
+            font-size: 45px;
+            margin-bottom: 18px;
+
+            animation:
+                glowText 1.5s ease-in-out infinite alternate,
+                floatText 3s ease-in-out infinite;
         }
 
         header p {
             font-size: 20px;
+
+            animation:
+                glowSmall 2s ease-in-out infinite alternate;
         }
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes backgroundMove {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes glowText {
+
+            from {
+                text-shadow:
+                    0 0 5px white,
+                    0 0 10px #c084fc,
+                    0 0 20px #9333ea;
+            }
+
+            to {
+                text-shadow:
+                    0 0 10px white,
+                    0 0 25px #e879f9,
+                    0 0 45px #c084fc,
+                    0 0 60px #9333ea;
+            }
+        }
+
+        @keyframes glowSmall {
+
+            from {
+                text-shadow:
+                    0 0 5px white;
+            }
+
+            to {
+                text-shadow:
+                    0 0 10px white,
+                    0 0 20px #f0abfc;
+            }
+        }
+
+        @keyframes floatText {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= CONTAINER ================= */
 
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
+
+        /* ================= TITLES ================= */
 
         .title {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
 
         .title h2 {
-            font-size: 32px;
-            color: #5b21b6;
-            margin-bottom: 10px;
+
+            font-size: 34px;
+
+            color: white;
+
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #5b21b6,
+                    #9333ea,
+                    #ec4899,
+                    #5b21b6
+                );
+
+            background-size: 300% 300%;
+
+            animation:
+                shineText 3s ease-in-out infinite,
+                glowTitle 1.5s ease-in-out infinite alternate;
         }
 
+        .title p {
+            margin-top: 15px;
+            color: #555;
+            font-size: 17px;
+        }
+
+        @keyframes shineText {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes glowTitle {
+
+            from {
+
+                box-shadow:
+                    0 0 5px #9333ea;
+
+                text-shadow:
+                    0 0 5px white;
+            }
+
+            to {
+
+                box-shadow:
+                    0 0 15px #9333ea,
+                    0 0 30px #e879f9;
+
+                text-shadow:
+                    0 0 10px white,
+                    0 0 20px #f0abfc;
+            }
+        }
+
+        /* ================= SERVICES ================= */
+
         .services {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
         }
 
         .card {
+
             background: white;
-            padding: 30px 20px;
-            border-radius: 15px;
+
+            padding: 35px 20px;
+
+            border-radius: 20px;
+
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.1);
+
+            transition: 0.4s;
+
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+
+            transform:
+                translateY(-12px)
+                scale(1.03);
+
+            border-color: #9333ea;
+
+            box-shadow:
+                0 10px 30px rgba(147,51,234,0.35),
+                0 0 20px rgba(236,72,153,0.25);
         }
 
         .card h3 {
+
             color: #6d28d9;
-            margin-bottom: 10px;
+
+            margin-bottom: 12px;
+
+            font-size: 21px;
+
+            animation:
+                glowSmall 2s ease-in-out infinite alternate;
         }
 
         .card p {
+
             color: #555;
+
+            line-height: 1.6;
         }
 
-        /* PORTFOLIO */
+        /* ================= PORTFOLIO ================= */
+
         .portfolio {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
             gap: 25px;
         }
 
         .work {
+
             background: white;
+
             padding: 10px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.12);
+
             overflow: hidden;
+
+            transition: 0.4s;
+
+            border: 2px solid transparent;
+        }
+
+        .work:hover {
+
+            transform:
+                translateY(-10px)
+                scale(1.02);
+
+            border-color: #9333ea;
+
+            box-shadow:
+                0 10px 30px rgba(147,51,234,0.35);
         }
 
         .work img {
+
             width: 100%;
+
             height: 280px;
+
             object-fit: cover;
+
             display: block;
-            border-radius: 10px;
+
+            border-radius: 14px;
+
+            transition: 0.5s;
+        }
+
+        .work:hover img {
+
+            transform: scale(1.05);
+        }
+
+        /* ================= COMMENTS ================= */
+
+        .comments {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #f3e8ff
+                );
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            border: 2px solid #9333ea;
+
+            box-shadow:
+                0 0 10px #c084fc,
+                0 0 25px rgba(147,51,234,0.4);
+
+            animation:
+                commentGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes commentGlow {
+
+            from {
+
+                box-shadow:
+                    0 0 8px #c084fc,
+                    0 0 15px rgba(147,51,234,0.3);
+            }
+
+            to {
+
+                box-shadow:
+                    0 0 15px #9333ea,
+                    0 0 35px #e879f9;
+            }
+        }
+
+        .comments input,
+        .comments textarea {
+
+            width: 100%;
+
+            padding: 15px;
+
+            margin-bottom: 15px;
+
+            border:
+                2px solid #ddd;
+
+            border-radius: 12px;
+
+            font-size: 16px;
+
+            outline: none;
+
             transition: 0.3s;
         }
 
-        .work img:hover {
+        .comments input:focus,
+        .comments textarea:focus {
+
+            border-color: #9333ea;
+
+            box-shadow:
+                0 0 10px
+                rgba(147,51,234,0.4);
+        }
+
+        .comments textarea {
+
+            height: 130px;
+
+            resize: vertical;
+        }
+
+        /* ================= COMMENT BUTTON ================= */
+
+        .comment-button {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 16px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #5b21b6,
+                    #9333ea,
+                    #ec4899,
+                    #5b21b6
+                );
+
+            background-size: 300% 300%;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            animation:
+                buttonMove 3s ease infinite,
+                buttonGlow 1.5s ease-in-out infinite alternate;
+
+            transition: 0.3s;
+        }
+
+        .comment-button:hover {
+
             transform: scale(1.03);
         }
 
+        @keyframes buttonMove {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes buttonGlow {
+
+            from {
+
+                box-shadow:
+                    0 0 5px #9333ea;
+            }
+
+            to {
+
+                box-shadow:
+                    0 0 15px #9333ea,
+                    0 0 30px #e879f9;
+            }
+        }
+
+        /* ================= COMMENT LIST ================= */
+
+        #commentList {
+
+            margin-top: 25px;
+        }
+
+        .comment {
+
+            background: #f4f0ff;
+
+            padding: 18px;
+
+            border-radius: 15px;
+
+            margin-top: 12px;
+
+            border-left:
+                5px solid #9333ea;
+
+            box-shadow:
+                0 3px 10px
+                rgba(0,0,0,0.08);
+
+            animation:
+                commentAppear 0.5s ease;
+        }
+
+        .comment strong {
+
+            color: #5b21b6;
+
+            font-size: 18px;
+        }
+
+        @keyframes commentAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(15px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+        /* ================= CONTACT ================= */
+
         .contact {
+
             text-align: center;
-            background: #5b21b6;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #5b21b6,
+                    #9333ea,
+                    #ec4899
+                );
+
+            background-size: 300% 300%;
+
             color: white;
-            padding: 45px 20px;
+
+            padding: 55px 20px;
+
             margin-top: 30px;
+
+            animation:
+                backgroundMove 6s ease infinite;
         }
 
         .contact h2 {
+
             margin-bottom: 15px;
+
+            font-size: 32px;
+
+            animation:
+                glowText 1.5s ease-in-out infinite alternate;
+        }
+
+        .contact p {
+
+            font-size: 18px;
         }
 
         .button {
+
             display: inline-block;
-            margin-top: 20px;
+
+            margin-top: 25px;
+
             background: white;
+
             color: #5b21b6;
-            padding: 14px 28px;
+
+            padding: 15px 30px;
+
             border-radius: 30px;
+
             text-decoration: none;
+
             font-weight: bold;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 0 10px white;
         }
 
+        .button:hover {
+
+            transform:
+                scale(1.08);
+
+            box-shadow:
+                0 0 15px white,
+                0 0 30px #f0abfc;
+        }
+
+        /* ================= FOOTER ================= */
+
         footer {
+
             text-align: center;
-            padding: 20px;
+
+            padding: 25px;
+
             background: #25104d;
+
             color: white;
         }
 
+        footer p {
+
+            animation:
+                glowSmall 2s ease-in-out infinite alternate;
+        }
+
+        /* ================= MOBILE ================= */
+
         @media (max-width: 600px) {
+
+            header {
+
+                padding: 60px 15px;
+            }
+
             header h1 {
+
                 font-size: 30px;
             }
 
             header p {
+
                 font-size: 16px;
             }
+
+            .title h2 {
+
+                font-size: 25px;
+            }
+
+            .comments {
+
+                padding: 25px 18px;
+            }
+
+            .work img {
+
+                height: 240px;
+            }
         }
+
     </style>
 </head>
 
 <body>
 
+
+    <!-- ================= HEADER ================= -->
+
     <header>
-        <h1>Mr Gentlematic Graphics Design</h1>
-        <p>Tunakupa ubunifu wa kisasa kwa biashara na mitandao ya kijamii.</p>
+
+        <h1>
+            Mr Gentlematic Graphics Design
+        </h1>
+
+        <p>
+            ✨ Tunakupa ubunifu wa kisasa kwa biashara na mitandao ya kijamii. ✨
+        </p>
+
     </header>
+
+
+    <!-- ================= SERVICES ================= -->
 
     <section class="container">
 
         <div class="title">
-            <h2>Huduma Tunazotoa</h2>
-            <p>Chagua huduma unayohitaji kwa biashara yako.</p>
+
+            <h2>
+                Huduma Tunazotoa
+            </h2>
+
+            <p>
+                Chagua huduma unayohitaji kwa biashara yako.
+            </p>
+
         </div>
+
 
         <div class="services">
 
-            <div class="card">
-                <h3>🎨 Logo Design</h3>
-                <p>Logo nzuri na professional kwa biashara au brand yako.</p>
-            </div>
 
             <div class="card">
-                <h3>📢 Poster Design</h3>
-                <p>Poster zinazovutia kwa matangazo ya biashara yako.</p>
+
+                <h3>
+                    🎨 Logo Design
+                </h3>
+
+                <p>
+                    Logo nzuri na professional kwa biashara
+                    au brand yako.
+                </p>
+
             </div>
 
-            <div class="card">
-                <h3>💳 Business Card</h3>
-                <p>Business card yenye muonekano wa kisasa na wa kuvutia.</p>
-            </div>
 
             <div class="card">
-                <h3>📱 Social Media</h3>
-                <p>Design za matangazo kwa WhatsApp, Instagram, Facebook na TikTok.</p>
+
+                <h3>
+                    📢 Poster Design
+                </h3>
+
+                <p>
+                    Poster zinazovutia kwa matangazo
+                    ya biashara yako.
+                </p>
+
             </div>
+
+
+            <div class="card">
+
+                <h3>
+                    💳 Business Card
+                </h3>
+
+                <p>
+                    Business card yenye muonekano
+                    wa kisasa na wa kuvutia.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    📱 Social Media
+                </h3>
+
+                <p>
+                    Design za matangazo kwa WhatsApp,
+                    Instagram, Facebook na TikTok.
+                </p>
+
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- KAZI ZETU -->
+    <!-- ================= PORTFOLIO ================= -->
+
     <section class="container">
 
         <div class="title">
-            <h2>🎨 Kazi Zetu</h2>
-            <p>Baadhi ya designs tulizotengeneza.</p>
+
+            <h2>
+                🎨 Kazi Zetu
+            </h2>
+
+            <p>
+                Baadhi ya designs tulizotengeneza.
+            </p>
+
         </div>
+
 
         <div class="portfolio">
 
-            <div class="work">
-                <img src="design1.jpg" alt="Graphic Design 1">
-            </div>
 
             <div class="work">
-                <img src="design2.jpg" alt="Graphic Design 2">
+
+                <img
+                    src="design1.jpg"
+                    alt="Graphic Design 1"
+                >
+
             </div>
 
-            <div class="work">
-                <img src="design3.jpg" alt="Graphic Design 3">
-            </div>
 
             <div class="work">
-                <img src="design4.jpg" alt="Graphic Design 4">
+
+                <img
+                    src="design2.jpg"
+                    alt="Graphic Design 2"
+                >
+
             </div>
 
-            <div class="work">
-                <img src="design5.jpg" alt="Graphic Design 5">
-            </div>
 
             <div class="work">
-                <img src="design6.jpg" alt="Argent Design">
+
+                <img
+                    src="design3.jpg"
+                    alt="Graphic Design 3"
+                >
+
             </div>
+
+
+            <div class="work">
+
+                <img
+                    src="design4.jpg"
+                    alt="Graphic Design 4"
+                >
+
+            </div>
+
+
+            <div class="work">
+
+                <img
+                    src="design5.jpg"
+                    alt="Graphic Design 5"
+                >
+
+            </div>
+
+
+            <div class="work">
+
+                <img
+                    src="design6.jpg"
+                    alt="graphic Design"
+                >
+
+            </div>
+
 
         </div>
 
     </section>
 
 
+    <!-- ================= COMMENTS ================= -->
+
+    <section class="container">
+
+        <div class="title">
+
+            <h2>
+                💬 Tupe Maoni Yako
+            </h2>
+
+            <p>
+                Tungependa kusikia maoni yako kuhusu huduma zetu.
+            </p>
+
+        </div>
+
+
+        <div class="comments">
+
+
+            <input
+                type="text"
+                id="name"
+                placeholder="✍️ Andika jina lako"
+            >
+
+
+            <textarea
+                id="message"
+                placeholder="💭 Andika maoni yako hapa..."
+            ></textarea>
+
+
+            <button
+                class="comment-button"
+                onclick="addComment()"
+            >
+                🚀 Tuma Maoni
+            </button>
+
+
+            <div id="commentList"></div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
     <section class="contact">
 
-        <h2>Unahitaji Design?</h2>
+        <h2>
+            🔥 Unahitaji Design?
+        </h2>
 
-        <p>Wasiliana nasi leo kwa ajili ya huduma yako.</p>
+        <p>
+            Wasiliana nasi leo kwa ajili ya huduma yako.
+        </p>
 
-        <a class="button" href="https://wa.me/255792286991">
+
+        <a
+            class="button"
+            href="https://wa.me/255792286991"
+        >
             💬 Wasiliana WhatsApp
         </a>
 
     </section>
 
 
+    <!-- ================= FOOTER ================= -->
+
     <footer>
-        <p>© 2026 Mr Gentlematic Graphics Design. All Rights Reserved.</p>
+
+        <p>
+            © 2026 Mr Gentlematic Graphics Design.
+            All Rights Reserved.
+        </p>
+
     </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function addComment() {
+
+            let name =
+                document.getElementById("name").value.trim();
+
+            let message =
+                document.getElementById("message").value.trim();
+
+
+            if (name === "" || message === "") {
+
+                alert(
+                    "⚠️ Tafadhali jaza jina na maoni yako."
+                );
+
+                return;
+            }
+
+
+            let commentList =
+                document.getElementById("commentList");
+
+
+            let comment =
+                document.createElement("div");
+
+
+            comment.className =
+                "comment";
+
+
+            comment.innerHTML =
+                "<strong>👤 " +
+                name +
+                "</strong><br><br>" +
+                "💬 " +
+                message;
+
+
+            commentList.appendChild(comment);
+
+
+            document.getElementById("name").value = "";
+
+            document.getElementById("message").value = "";
+
+        }
+
+    </script>
+
 
 </body>
 </html>
